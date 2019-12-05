@@ -8,7 +8,7 @@ export const environment = {
   baseMicroServiceURL: 'http://localhost',
   services: {
     gym: {
-      port: 8889,
+      port: 9090,
       contextRoot: ''
     }
     }
