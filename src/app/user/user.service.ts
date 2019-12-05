@@ -10,7 +10,7 @@ import { Users, UsersPage } from './users';
 export class UserService {
 
   private url =
-    `${environment.baseMicroServiceURL}:${environment.services.gym.port}${environment.services.gym.contextRoot}/user-controller/users`;
+    `${environment.baseMicroServiceURL}:${environment.services.gym.port}${environment.services.gym.contextRoot}/user-controller`;
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +39,7 @@ export class UserService {
   }
 
   post(users: Users): Observable<Users> {
-    const url = `${this.url}`;
+    const url = `${this.url}/users`;
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.post<Program>(url, program, {headers: get})));
     return this.http.get<Users>(url);
@@ -57,7 +57,7 @@ export class UserService {
   }
 
   delete(id: number): Observable<any> {
-    const url = `${this.url}/${id}`;
+    const url = `${this.url}/users/${id}`;
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.delete<Program>(url, {headers: get})));
     return this.http.delete<Users>(url);
@@ -65,7 +65,7 @@ export class UserService {
   }
 
   findByUuid(uuid: string): Observable<Users> {
-    const url = `${this.url}/get/${uuid}`;
+    const url = `${this.url}/users/get/${uuid}`;
     // return this.keycloakService.addTokenToHeader( headers ).pipe(
     //   mergeMap( get => this.http.get<Program>(url, { headers: get } ) ) );
     return this.http.get<Users>(url);
