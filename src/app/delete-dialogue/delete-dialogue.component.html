@@ -1,0 +1,11 @@
+<form [formGroup]="formGroup" fxLayout="column">
+    <h2 mat-dialog-title>{{ title }}</h2>
+    <mat-dialog-content fxLayout="column" fxLayoutGap="10px">
+      {{text}}
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button (click)="onCancel()" fxFlex>Cancel</button>
+      <button mat-button (click)="onSubmit()" fxFlex>Ok</button>
+    </mat-dialog-actions>
+  </form>
+  

@@ -1,1 +1,38 @@
-<p>new-user works!</p>
+<div class="row">
+
+  <div class="col-md-9">
+    <button mat-icon-button class="dialog-close-button" (click)="onCancel()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <h1 mat-dialog-title style="border-bottom: 1px solid grey; padding-bottom: 3px">New User</h1>
+    <div mat-dialog-content>
+      <form [formGroup]="form">
+        <div class="example-container">
+          <mat-form-field style="    margin-right: 60px;"> <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field> <input matInput placeholder="Telephone Number" formControlName="telephoneNumbers">
+          </mat-form-field>
+          <br>
+          <mat-form-field> <input matInput placeholder="Email" formControlName="emailAddresses"> </mat-form-field>
+          <br>
+          <br>
+
+        </div>
+
+
+      </form>
+    </div>
+    <div mat-dialog-actions>
+      <!--<button mat-raised-button color="primary" mat-button (click)="onCancel()">Cancel</button>-->
+      <button mat-raised-button style="background-color: #910077!important;" color="primary" mat-button
+        (click)="onUpdate()" [disabled]="!form.valid">SUBMIT</button>
+    </div>
+  </div>
+
+
+  <div class="col-md-3" style="background-image: url(/assets/img/popup.jpg); ">
+
+
+  </div>
+</div>

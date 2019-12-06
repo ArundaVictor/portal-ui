@@ -30,7 +30,7 @@ export class UserService {
   }
 
   getbyId(id: number): Observable<Users> {
-    const url = `${this.url}/${id}`;
+    const url = `${this.url}/users/${id}`;
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.get<Program>(url, {headers: get})));
     return this.http.get<Users>(url);
@@ -48,7 +48,7 @@ export class UserService {
   }
 
   put(users: Users): Observable<Users> {
-    const url = `${this.url}/${users.id}`;
+    const url = `${this.url}/users/${users.id}`;
 
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.put<Program>(url, program, {headers: get})));

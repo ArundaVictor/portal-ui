@@ -31,9 +31,17 @@ import {
   MatExpansionModule
 } from "@angular/material";
 import { HttpClientModule } from "@angular/common/http";
+import { DeleteDialogueComponent } from "./delete-dialogue/delete-dialogue.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, NewUserComponent],
+  declarations: [
+    AppComponent,
+    UserComponent,
+    NewUserComponent,
+    DeleteDialogueComponent
+  ],
+  entryComponents: [DeleteDialogueComponent, NewUserComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,7 +69,10 @@ import { HttpClientModule } from "@angular/common/http";
     MatToolbarModule,
     MatTooltipModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
