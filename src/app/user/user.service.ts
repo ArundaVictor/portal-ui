@@ -42,7 +42,7 @@ export class UserService {
     const url = `${this.url}/users`;
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.post<Program>(url, program, {headers: get})));
-    return this.http.get<Users>(url);
+    return this.http.post<Users>(url, users);
 
 
   }

@@ -4,6 +4,10 @@
     <mat-spinner [hidden]="!isLoadingResults"></mat-spinner>
   </div> -->
 
+  <button title="Add New User" (click)="createOrEdit()" mat-icon-button>
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+
 
   <table mat-table [dataSource]="users | async" class="example-table" style="width: 100%;">
 
