@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Users, UsersPage } from './users';
+import { Injectable } from "@angular/core";
+import { environment } from "src/environments/environment";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { Users, UsersPage } from "./users";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class UserService {
+  private url = `${environment.baseMicroServiceURL}:${environment.services.gym.port}${environment.services.gym.contextRoot}/user-controller`;
 
-  private url =
-    `${environment.baseMicroServiceURL}:${environment.services.gym.port}${environment.services.gym.contextRoot}/user-controller`;
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAllUsers(): Observable<Users[]> {
     const url = `${this.url}/list`;
@@ -34,8 +32,6 @@ export class UserService {
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.get<Program>(url, {headers: get})));
     return this.http.get<Users>(url);
-
-
   }
 
   post(users: Users): Observable<Users> {
@@ -43,8 +39,6 @@ export class UserService {
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.post<Program>(url, program, {headers: get})));
     return this.http.post<Users>(url, users);
-
-
   }
 
   put(users: Users): Observable<Users> {
@@ -53,7 +47,6 @@ export class UserService {
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.put<Program>(url, program, {headers: get})));
     return this.http.put<Users>(url, users);
-
   }
 
   delete(id: number): Observable<any> {
@@ -61,7 +54,6 @@ export class UserService {
     // return this.keycloakService.addTokenToHeader(headers).pipe(
     //   mergeMap(get => this.http.delete<Program>(url, {headers: get})));
     return this.http.delete<Users>(url);
-
   }
 
   findByUuid(uuid: string): Observable<Users> {
@@ -69,6 +61,5 @@ export class UserService {
     // return this.keycloakService.addTokenToHeader( headers ).pipe(
     //   mergeMap( get => this.http.get<Program>(url, { headers: get } ) ) );
     return this.http.get<Users>(url);
-
   }
 }
