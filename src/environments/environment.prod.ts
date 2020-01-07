@@ -4,7 +4,7 @@ export const environment = {
   baseMicroServiceURL: 'https://gymfits.herokuapp.com/',
   services: {
     gym: {
-      port: 54244,
+      port: 10471,
       contextRoot: ''
     }
     }
